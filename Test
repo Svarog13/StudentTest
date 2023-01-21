@@ -1,0 +1,112 @@
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+void main()
+{
+	/*Написати програму, яка перевіряє користувача на знання таблиці множення.Програма виводить
+	на екран два числа, користувач має ввести їхній добуток.
+	Додатково: Розробити кілька рівнів складності(відрізняються
+	складністю та кількістю питань).Вивести користувачеві
+	оцінку його знань.*/
+
+	int level = 0;
+	int counter = 1;
+	int result = 0;
+	srand(time(NULL));
+	cout << "Enter the difficulty level: 1 - easy, 2 - medium, 3 - difficult: ";
+	cin >> level;
+	if (level == 1)
+	{
+		cout << "You have chosen the easy difficulty level!" << endl;
+		for (int question = 1; question <= 5; question++)
+		{
+
+			srand(time(NULL));
+
+			int min = 1;
+			int max = 10;
+			
+			int random = min + rand() % ((max + 1) - min);
+			int a = random;
+			random = min + rand() % ((max + 1) - min);
+			int b = random;
+			int summ = a * b;
+			cout << "Enter the product of " << a << " * " << b << endl;
+			cin >> summ;
+			if (summ == a * b)
+			{
+				result+=counter;
+				cout << "You're God damn right!" << endl;
+			}
+			else
+			{
+				cout << "LOL,Wrong!" << endl;;
+			}
+		}
+		cout << "You test result->" << result << endl;
+	}
+	else if (level == 2)
+	{
+		cout << "You have chosen the medium difficulty level!" << endl;
+		for (int question = 1; question <= 10; question++)
+		{
+
+			srand(time(NULL));
+
+			int min = 1;
+			int max = 100;
+			int random = min + rand() % ((max + 1) - min);
+			int a = random;
+			random = min + rand() % ((max + 1) - min);
+			int b = random;
+			int summ = a * b;
+			cout << "Enter the product of " << a << " * " << b << endl;
+			cin >> summ;
+			if (summ == a * b)
+			{
+				result += counter;
+				cout << "You're God damn right!" << endl;
+			}
+			else
+			{
+				cout << "LOL,Wrong!" << endl;;
+			}
+		}
+		cout << "You test result->" << result << endl;
+	}
+	else if (level == 3)
+	{
+		cout << "You have chosen the medium difficulty level!" << endl;
+		for (int question = 1; question <= 15; question++)
+		{
+
+			srand(time(NULL));
+
+			int min = 1;
+			int max = 1000;
+
+			int random = min + rand() % ((max + 1) - min);
+			int a = random;
+			random = min + rand() % ((max + 1) - min);
+			int b = random;
+			int summ = a * b;
+			cout << "Enter the product of " << a << " * " << b << endl;
+			cin >> summ;
+			if (summ == a * b)
+			{
+				result += counter;
+				cout << "You're God damn right!" << endl;
+			}
+			else
+			{
+				cout << "LOL,Wrong!" << endl;;
+			}
+		}
+		cout << "You test result->" << result << endl;
+	}
+	else
+	{
+		cout << "You enter wrong digit!";
+	}
+
+}
